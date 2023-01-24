@@ -37,6 +37,10 @@
   content: "\e055";
 }
 
+.fa-mastodon:before {
+  content: "\f4f6";
+}
+
 .fa-envelope:before {
   content: "\f0e0";
 }
