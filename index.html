@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -64,7 +64,8 @@
         font-weight: 400;
         font-display: block;
         src: url(assets/webfonts/fa-brands-400.eot);
-        src: url(assets/webfonts/fa-brands-400.eot?#iefix)
+        src:
+          url(assets/webfonts/fa-brands-400.eot?#iefix)
             format("embedded-opentype"),
           url(assets/webfonts/fa-brands-400.woff2) format("woff2"),
           url(assets/webfonts/fa-brands-400.woff) format("woff"),
@@ -81,7 +82,8 @@
         font-weight: 900;
         font-display: block;
         src: url(assets/webfonts/fa-solid-900.eot);
-        src: url(assets/webfonts/fa-solid-900.eot?#iefix)
+        src:
+          url(assets/webfonts/fa-solid-900.eot?#iefix)
             format("embedded-opentype"),
           url(assets/webfonts/fa-solid-900.woff2) format("woff2"),
           url(assets/webfonts/fa-solid-900.woff) format("woff"),
@@ -150,6 +152,28 @@
         color: #e50af5;
       }
 
+      /* Use inline-flex on the h3 so items (link, separator, link) are evenly centered */
+      .main-link h3 {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      /* explicit separator element */
+      .link-sep {
+        color: #888;
+        font-size: 20px;
+        line-height: 1;
+        display: inline-block;
+        vertical-align: middle;
+      }
+
+      /* hide the previous pseudo-element approach if still present */
+      .main-link h3 a + a::before {
+        display: none;
+      }
+
       @media (prefers-color-scheme: dark) {
         body {
           background: #282c35;
@@ -165,6 +189,11 @@
 
         .main-social ul li a {
           color: #fff;
+        }
+
+        /* make separator lighter in dark mode */
+        .link-sep {
+          color: #bbb;
         }
       }
     </style>
@@ -217,7 +246,9 @@
       </div>
       <div class="main-link">
         <h3>
-          <a href="https://blog.qassim.uk/">blog.qassim.uk</a>
+          <a href="https://blog.qassim.uk/">Blog</a>
+          <span class="link-sep" aria-hidden="true">•</span>
+          <a href="https://qaperture.qassim.uk/">Photos</a>
         </h3>
       </div>
     </div>
